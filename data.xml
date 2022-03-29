@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <group>
+        <product category="A">A1</product>
+        <product category="C">C1</product>
+    </group>
+    <group>
+        <product category="A">A2</product>
+        <product category="B">B2</product>
+    </group>
+    <group>
+        <product category="B">B3</product>
+        <product category="C">C3</product>
+    </group>
+</root>

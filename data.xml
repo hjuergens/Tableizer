@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<root>
+<grouping>
     <group>
         <product category="A">A1</product>
         <product category="C">C1</product>
+        <product>missing category is ignored</product>
     </group>
     <group>
         <product category="A">A2</product>
-        <product category="B">B2</product>
+        <product category="B">B2(1)</product>
+        <product category="B">B2(2)</product>
     </group>
     <group>
         <product category="B">B3</product>
         <product category="C">C3</product>
+        <spare_part category="C">spare part is ignored</spare_part>
     </group>
-</root>
+    <meta><product category="D">outside group is ignored</product></meta>
+</grouping>

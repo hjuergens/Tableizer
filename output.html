@@ -1,19 +1,19 @@
 <!DOCTYPE html><html>
-    <table>
+    <table class="grouping">
         <thead>
             <tr>
-                <th>A</th><th>B</th><th>C</th>
+                <th id="A">A</th><th id="B">B</th><th id="C">C</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td name="A">A1</td><td name="B"></td><td name="C">C1</td>
+            <tr class="group">
+                <td class="product" headers="A">A1</td><td class="product" headers="B"></td><td class="product" headers="C">C1</td>
             </tr>
-            <tr>
-                <td name="A">A2</td><td name="B">B2</td><td name="C"></td>
+            <tr class="group">
+                <td class="product" headers="A">A2</td><td class="product" headers="B">B2(1),B2(2)</td><td class="product" headers="C"></td>
             </tr>
-            <tr>
-                <td name="A"></td><td name="B">B3</td><td name="C">C3</td>
+            <tr class="group">
+                <td class="product" headers="A"></td><td class="product" headers="B">B3</td><td class="product" headers="C">C3</td>
             </tr>
         </tbody>
     </table>

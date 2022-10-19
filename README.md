@@ -31,9 +31,11 @@ First we collect all distinct categories.
 
 The following fragement was found here
 [/how-to-select-distinct-values-from-xml-document-using-xpath](https://stackoverflow.com/questions/2871707/how-to-select-distinct-values-from-xml-document-using-xpath)
-```
+```xml
     <xsl:variable name="column_names">
-        <!-- <xsl:for-each select="//product[@category and count(. | key('products-by-category', @category)[1]) = 1]"> -->
+        <!--
+            for description see below: <xsl:for-each select="//product[@category and count(. | key('products-by-category', @category)[1]) = 1]">
+         -->
         <xsl:for-each select="//product
              [generate-id() =  generate-id(key('key_category', @category)[1]) ]">
             <xsl:sort select="@category" />
@@ -53,8 +55,9 @@ to a new node `column_name`
 
 You may also consider the expression:
 ```xml
-<xsl:for-each select="//product[count(. | key('key_category', @category)[1]) = 1]">
-```
+<xsl:for-each select="//product[count(. | key('key_category', @category)[1]) = 1]">...</xsl:for-each>
+``` 
+
 see 
 [XSLT/Muenchian grouping - Wikipedia](https://en.wikipedia.org/wiki/XSLT/Muenchian_grouping)
 for a detailed description.
@@ -85,9 +88,9 @@ or the plain vanilla version without any extensions
       <xsl:sort select="@category"/>
       <th>
         <xsl:attribute name="id">
-        <xsl:value-of select="@category"/>
+            <xsl:value-of select="@category"/>
         </xsl:attribute>
-          <xsl:value-of select="@category"/>
+        <xsl:value-of select="@category"/>
       </th>
     </xsl:for-each>
   </tr>
